@@ -1,0 +1,27 @@
+{
+  "name": "@monorepo/shared",
+  "version": "0.0.0",
+  "private": true,
+  "description": "共享配置、脚本、函数等",
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/shared.es.js",
+      "require": "./dist/shared.umd.js"
+    },
+    "./configs": "./configs"
+  },
+  "keywords": [
+    "shared",
+    "jsonp"
+  ],
+  "devDependencies": {
+    "typescript": "^4.5.4",
+    "vite": "^2.8.0"
+  }
+}

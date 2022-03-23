@@ -1,0 +1,28 @@
+{
+  "name": "@monorepo/mp-modules",
+  "version": "0.0.0",
+  "scripts": {
+    "build": "father-build",
+    "test": "umi-test",
+    "test:coverage": "umi-test --coverage",
+    "prepublishOnly": "npm run build"
+  },
+  "main": "src/index.ts",
+  "typings": "src/index.ts",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.15.1",
+    "@testing-library/react": "^12.1.2",
+    "@types/jest": "^27.0.3",
+    "@umijs/test": "^3.0.5",
+    "father-build": "^1.17.2",
+    "prettier": "^2.2.1"
+  }
+}

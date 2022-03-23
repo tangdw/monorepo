@@ -1,0 +1,27 @@
+{
+  "name": "@monorepo/docs",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "docs:start": "dumi dev",
+    "docs:build": "dumi build",
+    "docs:deploy": "gh-pages -d docs-dist",
+    "format": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
+    "deploy": "pnpm run docs:build && pnpm run docs:deploy"
+  },
+  "devDependencies": {
+    "@umijs/fabric": "^2.8.1",
+    "dumi": "^1.1.0",
+    "gh-pages": "^3.0.0",
+    "prettier": "^2.5.1",
+    "rimraf": "^3.0.2"
+  },
+  "engines": {
+    "pnpm": "^6.32.3",
+    "node": ">=14.0.0"
+  },
+  "packageManager": "pnpm@6.32.3",
+  "dependencies": {
+    "@monorepo/mp-modules": "workspace:^0.0.0"
+  }
+}

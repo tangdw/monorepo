@@ -1,0 +1,4 @@
+packages:
+  - 'packages/**'
+  # 排除的文件夹
+  - '!**/test/**'
