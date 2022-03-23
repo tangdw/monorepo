@@ -1,8 +1,24 @@
 ## 安装
 
 ```bash
+# 安装 pnpm 到全局 npm 里
 npm i -g pnpm
+
+# 安装 pnpm 到全局 pnpm 里
+pnpm i -g pnpm
+
+# 安装
 pnpm install
+
+# 如果出现错误 ERR_PNPM_REGISTRIES_MISMATCH 意思要更新源：
+pnpm install -g
+
+# 找到全局目录位置
+pnpm root -g
+
+# 删除 cli
+pnpm rm -g pnpm # 删除全局 pnpm 里的 pnpm
+npm rm -g pnpm # 删除全局 npm 里的 pnpm
 ```
 
 ## shared
@@ -27,8 +43,12 @@ react UI 组件库
 
 文档构建 `pnpm run docs:build -w`
 
-## 项目间的引用
+## 项目间的链接引用
 
-eg: 在 `dumi` 项目添加 `@monorepo/mp-modules` 依赖
+由于 `.npmrc` 设置了 `link-workspace-packages=false` 所以只支持 `workspace:` 协议链接工作区间的包
 
-`pnpm add @monorepo/mp-modules@workspace:* -w`
+eg: 在 `dumi` 项目添加 `@monorepo/mp-modules` 依赖 `pnpm add @monorepo/mp-modules@workspace:* -w`
+
+## 问题
+
+如果 `.npmrc` 设置 `shamefully-hoist=true` node_modules 将会提升依赖（扁平化安装）
